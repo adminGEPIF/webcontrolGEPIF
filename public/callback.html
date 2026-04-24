@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ArcGIS OAuth Callback</title>
+</head>
+<body>
+  <script>
+    // Aquest fragment de codi és el que espera l'SDK d'ArcGIS 
+    // per tancar el popup i retornar el control a l'aplicació principal.
+    if (opener && opener.esriId) {
+      opener.esriId.setOAuthResponseHash(window.location.hash);
+    } else {
+      window.close();
+    }
+  </script>
+</body>
+</html>
